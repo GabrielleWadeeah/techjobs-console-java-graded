@@ -117,9 +117,20 @@ public class TechJobs {
         return choiceKeys[choiceIdx];
     }
 
-    // Print a list of jobs
+    // Print a list of jobs to console in a specific format
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+        if (someJobs.isEmpty()) {
+                System.out.println("No Results");
+        } else {
+                for (HashMap<String, String> jobs: someJobs) {
+                    System.out.println("\n*****");
+
+                    for (Map.Entry<String, String> entry: jobs.entrySet()) {
+                        System.out.println(entry.getKey() + ": " + entry.getValue());
+                    }
+                    System.out.println("*****");
+                }
+            }
     }
 }
